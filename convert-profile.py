@@ -15,7 +15,7 @@ def getPermissionsFromProfile():
     profile = profileName
 
     if profile == 'Admin':
-        profile = 'Administrador do sistema'
+        profile = 'Administrador do sistema' #System Admin - For organizations that are in the English language
     queryProfile = 'sfdx force:data:soql:query -q "SELECT FIELDS(ALL) FROM Profile WHERE Name IN ({name}) LIMIT 1" --json'.format(name="'"+profile+"'")
 
     selectProfiles = subprocess.Popen(queryProfile, shell=True, stdout=subprocess.PIPE).stdout
